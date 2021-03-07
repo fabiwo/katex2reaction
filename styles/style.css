@@ -3,5 +3,15 @@
 }
 
 .latex {
-    font: normal 1em KaTeX_Main,Times New Roman,serif !important
+    font: normal 1em KaTeX_Main,Times New Roman,serif
 }
+
+
+li::before {
+    content: none !important;
+  }
+
+  ::selection {
+    color: rgba(139, 92, 246, var(--tw-text-opacity));
+    background: rgba(237, 233, 254);
+  }

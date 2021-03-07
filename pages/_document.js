@@ -14,7 +14,7 @@ class MyDocument extends Document {
           />
           <link rel='shortcut icon' href='/static/favicons/favicon.ico' />
         </Head>
-        <body className='bg-gray-50'>
+        <body className=''>
           <Main />
           <NextScript />
         </body>
