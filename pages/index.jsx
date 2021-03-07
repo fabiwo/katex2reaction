@@ -6,10 +6,7 @@ import PdfButton from '@/components/Download/PdfButton'
 import PngButton from '@/components/Download/PngButton'
 import SvgButton from '@/components/Download/SvgButton'
 
-import { downloadSvg } from '@/lib/download'
-
-import domtoimage from 'dom-to-image'
-import * as svgDownload from 'save-svg-as-png'
+import { downloadSvg, downloadPng } from '@/lib/download'
 
 export default function Home() {
   const [text, setText] = useState('ce{H_2O <=> H^+ + OH^-}')
@@ -26,18 +23,18 @@ export default function Home() {
         <div>
           <span className='latex'>LaTeX</span> Output:
         </div>
-        <div className='flex p-16 bg-gray-100 border rounded '>
+        <div id="texBlock" className='flex p-16 bg-white border rounded '>
           <FormulaView math={text} />
         </div>
-        <div className='p-3 text-white bg-gray-800 rounded' ref={texRef}>
+        <div ref={texRef} className='p-3 text-white bg-gray-800 rounded'>
           Download as:
         </div>
         <div className='flex space-x-5'>
-          <SvgButton onClick={() => downloadSvg(texRef)} />
+          <SvgButton onClick={() => downloadSvg(texRef, downloadRef)} />
+          <PngButton onClick={() => downloadPng(texRef, downloadRef)} />
           {/* <PngButton onClick={downloadPng} />
           <PdfButton onClick={downloadPdf} /> */}
         </div>
-        <a href='test12' ref={downloadRef}></a>
       </div>
     </MainLayout>
   )
