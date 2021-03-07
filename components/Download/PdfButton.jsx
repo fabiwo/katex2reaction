@@ -1,8 +1,9 @@
 const PdfButton = ({ onClick }) => {
   return (
     <button
+      disabled
       onClick={() => onClick()}
-      className='inline-flex items-center px-4 py-2 font-bold text-white bg-red-500 rounded hover:bg-red-600'
+      className='inline-flex items-center px-4 py-2 font-bold text-white bg-red-500 rounded bg-opacity-30'
     >
       <svg
         className='w-4 h-4 mr-2 fill-current'

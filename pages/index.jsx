@@ -23,17 +23,27 @@ export default function Home() {
         <div>
           <span className='latex'>LaTeX</span> Output:
         </div>
-        <div id="texBlock" className='flex p-16 bg-white border rounded '>
+        <div className='flex p-16 bg-white border rounded '>
+          {/* <svg id='TeX' width='800' height='200' viewBox='0 0 800 200'>
+            <foreignObject
+              textAnchor='middle'
+              x='0'
+              y='0'
+              width='100%'
+              height='100%'
+            >
+              <FormulaView math={text} />
+            </foreignObject>
+          </svg> */}
           <FormulaView math={text} />
         </div>
-        <div ref={texRef} className='p-3 text-white bg-gray-800 rounded'>
+        <div ref={texRef} className='p-3 rounded'>
           Download as:
         </div>
         <div className='flex space-x-5'>
           <SvgButton onClick={() => downloadSvg(texRef, downloadRef)} />
           <PngButton onClick={() => downloadPng(texRef, downloadRef)} />
-          {/* <PngButton onClick={downloadPng} />
-          <PdfButton onClick={downloadPdf} /> */}
+          <PdfButton onClick={() => {}} />
         </div>
       </div>
     </MainLayout>

@@ -1,8 +1,9 @@
 const PngButton = ({ onClick }) => {
   return (
     <button
+      disabled
       onClick={() => onClick()}
-      className='inline-flex items-center px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-600'
+      className='inline-flex items-center px-4 py-2 font-bold text-white bg-blue-500 rounded bg-opacity-30'
     >
       <svg
         className='w-4 h-4 mr-2 stroke-current'
