@@ -1,9 +1,9 @@
+import PanelBadge from '@/components/PanelBadge'
+
 const FormulaBar = ({ text, onChange }) => {
   return (
     <div className='relative text-gray-700'>
-      <span className='absolute p-1.5 text-xs font-medium text-white bg-gray-700 rounded top-2 left-3'>
-        Input
-      </span>
+      <PanelBadge>Input</PanelBadge>
       <input
         aria-label='Search articles'
         type='text'

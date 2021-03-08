@@ -6,7 +6,11 @@ const MainLayout = ({ children }) => {
     <>
       <div className='w-full h-3 bg-gradient-to-r from-purple-400 to-purple-500'></div>
       <Navbar />
-      <main>{children}</main>
+      <main>
+        <div className='flex flex-col items-center justify-center mx-auto space-y-5'>
+          {children}
+        </div>
+      </main>
       <Footer />
     </>
   )
