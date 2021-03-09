@@ -1,14 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import texStore from '@/lib/stores'
 import TeX from '@matejmazur/react-katex'
-import KaTeX, { ParseError, KatexOptions } from 'katex'
-import chemParse, { ceMacro, puMacro, trippleDashMacro } from '@/lib/mhchem'
+require('katex/dist/contrib/mhchem.js')
 
 import * as svgDownload from 'save-svg-as-png'
 const FormulaView = ({ math }) => {
-  const [texNode, setTexNode] = useState()
+  const setTexNode = texStore((state) => state.setTexNode)
 
   useEffect(() => {
     const texNode = document.getElementById('TeX')
+    setTexNode(texNode)
     //svgDownload.saveSvg(texNode, 'test.svg')
     //svgDownload.saveSvgAsPng(texNode, 'test.png')
   })

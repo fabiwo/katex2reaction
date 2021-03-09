@@ -1,11 +1,14 @@
 import { useState, useRef } from 'react'
+// Import Lib Functions
+import texStore from '@/lib/stores'
+// Import UI Components
 import MainLayout from '@/layouts/MainLayout'
 import FormulaBar from '@/components/FormulaBar'
 import FormulaView from '@/components/FormulaView'
 import LinkBadge from '@/components/LinkBadge'
 import PanelBadge from '@/components/PanelBadge'
 import DomSvgWrapper from '@/components/DomSvgWrapper'
-
+// Import Icons
 import IconButton from '@/components/IconButton'
 import Pdf from '../public/img/pdfIcon.svg'
 import Png from '../public/img/pngIcon.svg'
@@ -15,8 +18,6 @@ import { downloadSvg, downloadPng } from '@/lib/download'
 
 export default function Home() {
   const [text, setText] = useState('ce{H_2O <=> H^+ + OH^-}')
-  const texRef = useRef(null)
-  const downloadRef = useRef(null)
 
   return (
     <MainLayout>
@@ -30,6 +31,10 @@ export default function Home() {
           mhchem
         </LinkBadge>
       </div>
+      <h1 className='text-2xl'>Formula Cheatsheet</h1>
+      <LinkBadge href='https://katex.org/docs/supported.html'>
+        Cheatsheet
+      </LinkBadge>
       <FormulaBar text={text} onChange={setText} />
       <div className='relative w-3/5 border rounded-lg shadow-sm'>
         <div className='flex justify-center p-16 overflow-auto'>
@@ -37,8 +42,7 @@ export default function Home() {
             <FormulaView math={text} />
           </DomSvgWrapper>
         </div>
-
-        <div className='flex items-center justify-between w-full p-1 space-x-2 text-gray-500 bg-gray-50 bottom'>
+        <div className='flex items-center justify-between w-full p-1 space-x-2 text-gray-500 bg-gray-50'>
           <div className='flex items-center px-2 py-2 space-x-2'>
             <svg
               width='7'
