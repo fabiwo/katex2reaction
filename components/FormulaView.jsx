@@ -7,7 +7,7 @@ const FormulaView = ({ math = '', output = 'htmlAndMathml' }) => {
   const setTexNode = texStore((state) => state.setTexNode)
 
   useEffect(() => {
-    const texNode = document.getElementById('texDom')
+    const texNode = document.getElementById('TeX')
     setTexNode(texNode)
   })
 
