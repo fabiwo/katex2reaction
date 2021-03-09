@@ -3,18 +3,29 @@ import texStore from '@/lib/stores'
 import TeX from '@matejmazur/react-katex'
 require('katex/dist/contrib/mhchem.js')
 
-import * as svgDownload from 'save-svg-as-png'
-const FormulaView = ({ math }) => {
+const FormulaView = ({ math = '', output = 'htmlAndMathml' }) => {
   const setTexNode = texStore((state) => state.setTexNode)
 
   useEffect(() => {
-    const texNode = document.getElementById('TeX')
+    const texNode = document.getElementById('texDom')
     setTexNode(texNode)
-    //svgDownload.saveSvg(texNode, 'test.svg')
-    //svgDownload.saveSvgAsPng(texNode, 'test.png')
   })
 
-  return <TeX math={math} />
+  return (
+    <>
+      <TeX
+        block
+        id='texDom'
+        errorColor={'#cc0000'}
+        settings={{
+          macros: { '*': '\\cdot' },
+          output: output,
+        }}
+      >
+        {String.raw`\ce{${math}}`}
+      </TeX>
+    </>
+  )
 }
 
 export default FormulaView

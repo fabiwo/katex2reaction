@@ -17,6 +17,6 @@
             "strings": true
         }
     },
-    "svg.preview.background": "transparent",
+    "svg.preview.background": "custom",
 
 }

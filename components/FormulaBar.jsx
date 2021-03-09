@@ -11,7 +11,7 @@ const FormulaBar = ({ text, onChange }) => {
         value={text}
         placeholder='Enter formula'
         className='w-full max-w-3xl pl-12 pr-12 text-2xl text-center placeholder-gray-300 border border-gray-200 rounded-lg shadow-sm h-28 focus:outline-none'
-      />{' '}
+      />
     </div>
   )
 }
